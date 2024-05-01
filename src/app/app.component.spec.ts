@@ -20,10 +20,18 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('my-app');
   });
 
+  it(`should have the 'thisIsMyString' property`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.thisIsMyString).toEqual('thisIsMyString');
+  });
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, my-app');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, my-app'
+    );
   });
 });
